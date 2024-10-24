@@ -122,4 +122,7 @@ canvas {
   }
 }
 
-
+.buy-btn {
+  background-color: #086fda;
+  font-weight: bold;
+}

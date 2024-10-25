@@ -80,7 +80,7 @@ const FloatingNavbar = () => {
           Tech Specs
         </Link>
         <button
-          className="bg-blue text-white rounded-full text-xs"
+          className="bg-blue buy-btn text-white rounded-full text-xs"
           style={{ padding: "4px 12px", fontSize: "0.75rem" }}
         >
           <Link to="/Iphone16Pro">Buy</Link>

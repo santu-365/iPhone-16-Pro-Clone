@@ -7,7 +7,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="px-4 w-full flex flex-col justify-between items-center relative z-20">
+        <header className="bg-transparent px-4 w-full flex flex-col justify-between items-center relative z-20">
             <nav className="flex w-full screen-max-width items-center py-3 bg-transparent justify-between">
                 <Link to="/">
                     <img src={appleImg} alt="Apple" width={16} height={16} />

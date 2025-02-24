@@ -13,7 +13,7 @@ const App = () => {
   // return <button onClick={() => methodDoesNotExist()}>Break the world</button>;
 
   return (
-    <main className="bg-black">
+    <main>
       <Navbar />
       <Hero />
       <Highlights />

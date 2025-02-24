@@ -41,7 +41,7 @@ const HeroWithNavbar = () => {
 
   return (
     <>
-      <section className="w-full h-screen bg-black relative">
+      <section className="w-full h-screen relative">
         <div className="absolute inset-0 z-0">
           {isSmallScreen ? (
             <img src={smallHero} alt="Small Device Background" className="w-[100%] mt-[6rem] max-w-lg mx-auto h-[70%] object-cover" />

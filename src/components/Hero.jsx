@@ -7,18 +7,18 @@ import FloatingNavbar from "./FloatingNavbar";
 
 const HeroWithNavbar = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 760);
-  
+
   const handleResize = () => {
     setIsSmallScreen(window.innerWidth < 760);
   };
-  
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   useEffect(() => {
     if (!isSmallScreen) {
       gsap.to("#hero", { opacity: 1, delay: 4.7 });
@@ -38,7 +38,7 @@ const HeroWithNavbar = () => {
       gsap.set("#cta", { opacity: 1, scale: 1 });
     }
   }, [isSmallScreen]);
-  
+
   return (
     <>
       <section className="w-full h-screen relative">
@@ -57,33 +57,27 @@ const HeroWithNavbar = () => {
             </video>
           )}
         </div>
-        
-        <header className="w-full flex flex-col justify-between items-center relative z-20"></header>
-        
-        {/* Hero Content */}
-        <div className="bg-gray-300 text-white py-3 px-4 text-center w-full">
-  {isSmallScreen ? (
-    <p className="text-sm mb-1">
-      Get iPhone 16 Pro from just ₹4912.00/mo. for up to 24 mo.* with No Cost EMI and instant cashback.<br/>
-      <a href="#" className="text-blue ml-2 hover:underline">Buy &gt;</a>
-    </p>
-  ) : (
-    <p className="text-base mb-1">
-      Get iPhone 16 Pro from just ₹4912.00/mo. for up to 24 mo.* with No Cost EMI and instant cashback.
-      <a href="#" className="text-blue-400 ml-2 hover:underline">Buy &gt;</a>
-    </p>
-  )}
-</div>
 
+        {/* <header className="w-full flex flex-col justify-between items-center relative z-20"></header>  */}
+
+        {/* <==removed not required now but when required we could call  */}
+
+        <div className="bg-gray-300 text-white py-3 px-4 text-center w-full">
+           
+            <p className="text-sm mb-1">
+              Get iPhone 16 Pro from just ₹4912.00/mo. for up to 24 mo.* with No Cost EMI and instant cashback.<br />
+              <a href="#" className="text-blue ml-2 hover:underline">Buy &gt;</a>
+            </p>
+        </div>
 
         <div className="relative h-full w-full flex-center flex-col z-10">
-          <div 
+          <div
             className="flex flex-col items-center"
-            style={{ 
+            style={{
               marginTop: isSmallScreen ? '-80px' : '0'
             }}
           >
-            
+
             <p
               id="hero"
               className="hero-title  md:text-3xl font-semibold mb-4"
@@ -99,7 +93,7 @@ const HeroWithNavbar = () => {
               style={{ opacity: isSmallScreen ? 1 : 0 }}
             />
           </div>
-          
+
           <div
             id="cta"
             className="flex flex-col items-center mt-4 md:mt-0"
@@ -118,7 +112,7 @@ const HeroWithNavbar = () => {
           </div>
         </div>
       </section>
-      
+
       <FloatingNavbar />
     </>
   );

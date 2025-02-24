@@ -62,13 +62,7 @@ const Slider = () => {
                 marginLeft: index === 0 ? "0px" : "16px",
               }}
             >
-              <div
-                className="rounded-2xl overflow-hidden"
-                style={{
-                  height: "532px",
-                  width: "532px",
-                }}
-              >
+              <div className="h-[295px] md:h-[400px] lg:h-[532px] w-[295px] md:w-[295px] lg:w-[532px] rounded-2xl overflow-hidden">
                 <img
                   src={image}
                   alt={`Slide ${index + 1}`}
@@ -100,9 +94,8 @@ const Slider = () => {
       <div className="absolute top-0 right-0 mt-[700px] mr-6 flex space-x-4">
         <button
           onClick={() => scroll("left")}
-          className={`w-10 h-10 rounded-full flex items-center justify-center bg-[#1c1c1e] text-white ${
-            isAtStart ? "opacity-50" : "opacity-100"
-          }`}
+          className={`w-10 h-10 rounded-full flex items-center justify-center bg-[#1c1c1e] text-white ${isAtStart ? "opacity-50" : "opacity-100"
+            }`}
           disabled={isAtStart}
           aria-label="Previous slide"
         >
@@ -124,9 +117,8 @@ const Slider = () => {
         </button>
         <button
           onClick={() => scroll("right")}
-          className={`w-10 h-10 rounded-full flex items-center justify-center bg-[#1c1c1e] text-white ${
-            isAtEnd ? "opacity-50" : "opacity-100"
-          }`}
+          className={`w-10 h-10 rounded-full flex items-center justify-center bg-[#1c1c1e] text-white ${isAtEnd ? "opacity-50" : "opacity-100"
+            }`}
           disabled={isAtEnd}
           aria-label="Next slide"
         >

@@ -2,7 +2,8 @@ import hero from "/assets/images/hero.jpeg";
 export const heroImg = hero;
 
 import hmv from "/assets/videos/hero.mp4";
-import smallmv from "/assets/videos/smallHero.mp4";
+// import smallmv from "/assets/videos/smallHero.mp4";
+import small from "/assets/images/small.jpg"
 import highlightFirstmv from "/assets/videos/highlight-first.mp4";
 import highlightSecondmv from "/assets/videos/highlight-sec.mp4"; // Corrected name
 import highlightThirdmv from "/assets/videos/highlight-third.mp4"; // Corrected name
@@ -36,7 +37,7 @@ import ic3 from "../../public/assets/images/IC3.jpg";
 import ic4 from "../../public/assets/images/IC4.jpg";
 
 export const heroVideo = hmv;
-export const smallHeroVideo = smallmv;
+export const smallHero = small;
 export const highlightFirstVideo = highlightFirstmv;
 export const highlightSecondVideo = highlightSecondmv; // Corrected name
 export const highlightThirdVideo = highlightThirdmv; // Corrected name

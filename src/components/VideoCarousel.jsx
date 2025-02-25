@@ -11,6 +11,8 @@ const VideoCarousel = () => {
   const videoRef = useRef([]);
   const videoSpanRef = useRef([]);
   const videoDivRef = useRef([]);
+  // Add state to track screen size
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 760);
 
   const [video, setVideo] = useState({
     isEnd: false,
@@ -22,6 +24,19 @@ const VideoCarousel = () => {
 
   const [loadedData, setLoadedData] = useState([]);
   const { isEnd, isLastVideo, startPlay, videoId, isPlaying } = video;
+
+  // Add resize event listener to update screen size state
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 760);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   // pop ups
   //remove the ease option if you dont want the bouncing effect
   useGSAP(()=>{
@@ -166,25 +181,72 @@ const VideoCarousel = () => {
 
   const handleLoadedMetaData = (i, e) => setLoadedData((prev) => [...prev, e]);
 
+  // Calculate responsive dimensions for the video container
+  const getVideoDimensions = () => {
+    // For medium and large screens, maintain original dimensions
+    if (!isSmallScreen) {
+      return {
+        width: "1200px",
+        height: "730px",
+      };
+    }
+    // For small screens (mobile)
+    else {
+      // You can adjust these values based on your requirements
+      return {
+        width: "100%", // Use full width on mobile
+        height: "400px", // Reduced height for mobile
+        // You can also use viewport units for more responsive sizing
+        // width: "90vw",
+        // height: "50vh",
+      };
+    }
+  };
+
   return (
     <>
       <div className="flex items-center">
         {hightlightsSlides.map((list, i) => (
-          <div key={list.id} id="slider" className="sm:pr-40 pr-20">
+          <div 
+            key={list.id} 
+            id="slider" 
+            className={`${isSmallScreen ? 'pr-4' : 'sm:pr-40 pr-20'}`}
+          >
+            {/* RESPONSIVE VIDEO CAROUSEL CONTAINER */}
             <div className="video-carousel_container">
               <div
                 className="flex-center rounded-3xl overflow-hidden bg-black"
+                style={getVideoDimensions()}
+                // Uncomment and modify the values below to experiment with different sizes
+                /*
                 style={{
-                  width: "1200px",
-                  height: "730px",
+                  // FOR LARGE SCREENS (default/original)
+                  // width: "1200px",
+                  // height: "730px",
+                  
+                  // FOR MEDIUM SCREENS (tablets)
+                  // width: isSmallScreen ? "100%" : window.innerWidth < 1200 ? "800px" : "1200px",
+                  // height: isSmallScreen ? "400px" : window.innerWidth < 1200 ? "500px" : "730px",
+                  
+                  // FOR SMALL SCREENS (mobile)
+                  // Use percentage or viewport units on mobile for better responsiveness
+                  // width: isSmallScreen ? "95vw" : "1200px",
+                  // height: isSmallScreen ? "300px" : "730px",
+                  
+                  // ALTERNATIVE APPROACH: Using aspect ratio
+                  // width: isSmallScreen ? "100%" : "1200px",
+                  // aspectRatio: "16/9", // Maintain aspect ratio instead of fixed height
                 }}
+                */
               >
                 <video
                   id="video"
                   playsInline={true}
                   className={`${
-                    list.id === 2 && "translate-x-44"
+                    list.id === 2 && (isSmallScreen ? "translate-x-10" : "translate-x-44")
                   } pointer-events-none w-full h-full object-cover`}
+                  // Experiment with different object-fit values for mobile
+                  // className={`${list.id === 2 && "translate-x-44"} pointer-events-none w-full h-full ${isSmallScreen ? "object-contain" : "object-cover"}`}
                   preload="auto"
                   muted
                   ref={(el) => (videoRef.current[i] = el)}
@@ -202,9 +264,28 @@ const VideoCarousel = () => {
                 </video>
               </div>
 
-              <div className="absolute top-12 left-[5%] z-10">
+              {/* RESPONSIVE TEXT POSITION AND SIZE */}
+              <div 
+                className={`absolute ${isSmallScreen ? 'top-4 left-[3%]' : 'top-12 left-[5%]'} z-10`}
+                // Experiment with different positions
+                /*
+                className={`absolute z-10
+                  ${isSmallScreen 
+                    ? 'top-4 left-4' // Mobile position
+                    : window.innerWidth < 1200 
+                      ? 'top-8 left-[4%]' // Tablet position
+                      : 'top-12 left-[5%]' // Desktop position
+                  }
+                `}
+                */
+              >
                 {list.textLists.map((text, idx) => (
-                  <p key={idx} className="md:text-3xl text-xl font-medium">
+                  <p 
+                    key={idx} 
+                    className={`${isSmallScreen ? 'text-lg' : 'md:text-3xl text-xl'} font-medium`}
+                    // Experiment with different text sizes
+                    // className={`${isSmallScreen ? 'text-base' : window.innerWidth < 1200 ? 'text-2xl' : 'text-3xl'} font-medium`}
+                  >
                     {text}
                   </p>
                 ))}
@@ -214,9 +295,21 @@ const VideoCarousel = () => {
         ))}
       </div>
 
-{/* the play bar */}
-      <div id="playBar" className="fixed bottom-10 left-1 right-1 z-10 flex-center mt-10  overflow-visible ">
-        <button className="control-btn">
+      {/* RESPONSIVE PLAY BAR */}
+      <div 
+        id="playBar" 
+        className={`fixed ${isSmallScreen ? 'bottom-5' : 'bottom-10'} left-1 right-1 z-10 flex-center mt-10 overflow-visible`}
+        // Experiment with different positions and sizes
+        /*
+        className={`fixed z-10 flex-center mt-10 overflow-visible
+          ${isSmallScreen 
+            ? 'bottom-4 left-0 right-0' // Mobile position
+            : 'bottom-10 left-1 right-1' // Desktop position
+          }
+        `}
+        */
+      >
+        <button className={`control-btn ${isSmallScreen ? 'scale-75' : ''}`}>
           <img
             src={isLastVideo ? replayImg : !isPlaying ? playImg : pauseImg}
             alt={isLastVideo ? "replay" : !isPlaying ? "play" : "pause"}
@@ -230,11 +323,11 @@ const VideoCarousel = () => {
           />
         </button>
             
-        <div className="flex-center py-5 px-7 mx-4 bg-gray-300 backdrop-blur rounded-full">
+        <div className={`flex-center ${isSmallScreen ? 'py-3 px-5' : 'py-5 px-7'} mx-4 bg-gray-300 backdrop-blur rounded-full`}>
           {hightlightsSlides.map((_, i) => (
             <span
               key={i}
-              className="mx-2 w-3 h-3 bg-gray-200 rounded-full relative cursor-pointer"
+              className={`mx-2 ${isSmallScreen ? 'w-2 h-2' : 'w-3 h-3'} bg-gray-200 rounded-full relative cursor-pointer`}
               ref={(el) => (videoDivRef.current[i] = el)}
             >
               <span

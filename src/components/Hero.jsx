@@ -82,12 +82,12 @@ const HeroWithNavbar = () => {
             <div
               className="flex flex-col items-center"
               style={{
-                marginTop: isSmallScreen ? "-80px" : "0",
+                marginTop: isSmallScreen ? "-120px" : "-80px", // Moved up more by adjusting this margin
               }}
             >
               <p
                 id="hero"
-                className="hero-title md:text-3xl font-semibold mb-4"
+                className="hero-title md:text-3xl font-semibold mb-2" // Reduced bottom margin
                 style={{ color: "white", opacity: isSmallScreen ? 1 : 0 }}
               >
                 iPhone 16 Pro
@@ -96,17 +96,17 @@ const HeroWithNavbar = () => {
                 id="image"
                 src={appleIntelligenceImage}
                 alt="Built for Apple Intelligence"
-                className="w-full max-w-sm md:max-w-4xl -mt-24 md:-mt-48"
+                className="w-full max-w-sm md:max-w-4xl -mt-8 md:-mt-[12rem]" // Added negative margin to pull the image up
                 style={{ opacity: isSmallScreen ? 1 : 0 }}
               />
             </div>
           </div>
         </div>
 
-        {/* Move CTA outside of the video container */}
+        {/* Move CTA outside of the video container and adjust margin to reduce gap */}
         <div
           id="cta"
-          className="flex flex-col items-center py-8 bg-transparent"
+          className="flex flex-col items-center py-6 bg-transparent" // Added negative margin to reduce the gap
           style={{
             opacity: isSmallScreen ? 1 : 0,
           }}

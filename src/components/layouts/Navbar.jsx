@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { navLists } from "../../constants";
 import { appleImg, bagImg, searchImg } from "../../utils";
-import { useState } from "react";
+import { React,useState } from "react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

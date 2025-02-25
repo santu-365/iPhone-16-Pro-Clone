@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
+import React from 'react';
 import { heroVideo } from "../utils";
 import { smallHero } from "../utils";
 import appleIntelligenceImage from "./1.png";

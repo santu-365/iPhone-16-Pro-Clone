@@ -106,19 +106,20 @@ const HeroWithNavbar = () => {
         {/* Move CTA outside of the video container and adjust margin to reduce gap */}
         <div
           id="cta"
-          className="flex flex-col items-center md:py-6 bg-transparent" // Added negative margin to reduce the gap
+          className={`flex flex-col items-center md:py-6 bg-transparent ${isSmallScreen ? 'mt-[-10rem]' : ''}`}
           style={{
             opacity: isSmallScreen ? 1 : 0,
           }}
         >
           <a
             href="#highlights"
-            className="btn bg-white text-black buy-btn rounded-full px-6 py-2 text-md font-medium z-5"
+            className="btn text-white buy-btn rounded-full px-6 md:py-2 text-md font-medium z-5"
           >
             Buy
           </a>
-          <p className="text-gray-200 text-lg md:text-xl mt-4">From ₹119900.00*</p>
-          <p className="text-gray-200 text-lg md:text-xl text-center px-4 mt-2">
+          <p className="text-white font-[600] text-lg md:text-xl mt-4">From ₹119900.00* or</p>
+          <p className="text-white font-[600] text-lg md:text-xl ">₹4912.00/mo. for 24 mo.‡</p>
+          <p className="text-gray-200 text-lg md:text-xl pb-20 text-center md:px-4 px-12 ">
             Apple Intelligence starting in US English later this year
           </p>
         </div>

@@ -67,7 +67,7 @@ const HeroWithNavbar = () => {
             )}
           </div>
 
-          <div className={`bg-gray-300 ${isSmallScreen ? 'text-white' : 'text-white'} py-5 px-4 text-center w-full relative z-20`}>
+          <div className={`bg-gray-300 ${isSmallScreen ? 'text-white' : 'text-white'} md:py-5 py-3 px-4 text-center w-full relative z-20`}>
             <p className="text-[0.9rem] px-3">
               Get iPhone 16 Pro from just ₹4912.00/mo. for up to 24 mo.* with No
               Cost EMI and instant cashback.

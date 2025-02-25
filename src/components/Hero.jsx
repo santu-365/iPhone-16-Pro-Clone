@@ -72,7 +72,7 @@ const HeroWithNavbar = () => {
               Get iPhone 16 Pro from just ₹4912.00/mo. for up to 24 mo.* with No
               Cost EMI and instant cashback.
               <br className="block sm:hidden" />
-              <a href="#" className="text-blue ml-2 hover:underline">
+              <a href="#highlights" className="text-blue ml-2 hover:underline">
                 Buy &gt;
               </a>
             </p>

@@ -31,10 +31,10 @@ import explore2 from "/assets/images/explore2.jpg";
 import chip from "/assets/images/chip.png";
 import frame from "/assets/images/frame.png";
 
-import ic1 from "../../public/assets/images/IC1.jpg";
-import ic2 from "../../public/assets/images/IC2.jpg";
-import ic3 from "../../public/assets/images/IC3.jpg";
-import ic4 from "../../public/assets/images/IC4.jpg";
+import ic1 from "/assets/images/IC1.jpg";
+import ic2 from "/assets/images/IC2.jpg";
+import ic3 from "/assets/images/IC3.jpg";
+import ic4 from "/assets/images/IC4.jpg";
 
 export const heroVideo = hmv;
 export const smallHero = small;

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { ic1Img, ic2Img, ic3Img, ic4Img } from "../utils/index";
 
+ 
 const Slider = () => {
   const scrollRef = useRef(null);
   const [isAtStart, setIsAtStart] = useState(true);
@@ -24,6 +25,7 @@ const Slider = () => {
     }
   };
 
+  
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (scrollContainer) {
@@ -69,6 +71,7 @@ const Slider = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
+              
               <p className="text-left text-[#fafafa] ml-12 mt-4 text-lg font-normal leading-tight max-w-[532px]">
                 {index === 0 && (
                   <>

@@ -36,6 +36,7 @@ import ic2 from "/assets/images/IC2.jpg";
 import ic3 from "/assets/images/IC3.jpg";
 import ic4 from "/assets/images/IC4.jpg";
 
+
 export const heroVideo = hmv;
 export const smallHero = small;
 export const highlightFirstVideo = highlightFirstmv;

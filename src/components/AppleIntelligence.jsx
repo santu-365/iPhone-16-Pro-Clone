@@ -23,7 +23,7 @@ const AppleIntelligence = () => {
         text: "",
         StrongText: "Writing Tools",
         text2:
-          " can proofread your text and rewrite different versions until the tone and wording are just right, and summarise selected text with a tap. They’re available nearly everywhere you write, including third-party apps.",
+          " can proofread your text and rewrite different versions until the tone and wording are just right, and summarise selected text with a tap. They're available nearly everywhere you write, including third-party apps.",
       },
       card2: {
         img: img2card1,
@@ -75,14 +75,14 @@ const AppleIntelligence = () => {
         text: "Awareness of your personal context enables Siri to",
         StrongText: "help you in ways that are unique to you.",
         text2:
-          " Need your passport number while booking a flight? Siri can help find what you’re looking for, without compromising your privacy.",
+          " Need your passport number while booking a flight? Siri can help find what you're looking for, without compromising your privacy.",
       },
       card2: {
         img: img2card3,
         text: "",
         StrongText: "Richer language understanding",
         text2:
-          "and an enhanced voice make communicating with Siri even more natural. For example, if you stumble over your words, Siri still knows what you’re getting at.",
+          "and an enhanced voice make communicating with Siri even more natural. For example, if you stumble over your words, Siri still knows what you're getting at.",
       },
       card3: {
         img: img3card3,
@@ -132,10 +132,10 @@ const AppleIntelligence = () => {
             }`}
           >
             <div className="flex items-center flex-col font-semibold">
-              <div className="min-[1075px]:hidden text-md text-white pt-5 ">
+              <div className="min-[1075px]:hidden text-base sm:text-2xl text-white pt-5 mb-2  font-bold">
                 {item.cardHeading1}
               </div>
-              <p className="text-center w-[36rem]  text-xl mb-10 animate-fade ">
+              <p className="text-center w-full max-w-[36rem] px-4 text-xl mb-10 animate-fade break-words">
                 {item.cardHeading2}
               </p>
             </div>
@@ -154,7 +154,7 @@ const AppleIntelligence = () => {
               </div>
               <div className="min-[1075px]:w-1/2 flex flex-col gap-7">
                 <div className="py-10 leading-5 bg-black flex flex-col gap-14  rounded-xl text-gray-200">
-                  <div className="text-center px-28 min-[1075px]:px-24 animate-fade">
+                  <div className="text-center px-4 sm:px-12 md:px-28 min-[1075px]:px-24 animate-fade">
                     {item.card2.text}{" "}
                     <strong className="text-white font-bold">
                       {item.card2.StrongText}
@@ -167,7 +167,7 @@ const AppleIntelligence = () => {
                   </div>
                 </div>
                 <div className="bg-black w-full h-full  rounded-xl overflow-hidden">
-                  <p className="text-center px-[22%] py-14 animate-fade">
+                  <p className="text-center px-4 sm:px-[10%] md:px-[22%] py-14 animate-fade">
                     {item.card3.text}{" "}
                     <strong className="text-white">
                       {item.card3.StrongText}

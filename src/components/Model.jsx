@@ -111,7 +111,6 @@ const Model = () => {
               item={model}
               size={size}
             />
-
             <ModelView
               index={1}
               groupRef={small}

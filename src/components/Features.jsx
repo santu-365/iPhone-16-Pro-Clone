@@ -101,7 +101,7 @@ const Features = () => {
             </p>
           </div>
 
-          <div className="flex-1 p-6 rounded-lg w-full md:w-auto mb-24">
+          <div className="flex-1 p-6 rounded-lg w-full md:w-auto md:mb-24">
             <p className="feature-text g_text text-gray-400 custom-font-size leading-relaxed">
               iPhone 16 Pro is splash, water and
               <br />
@@ -126,7 +126,7 @@ const Features = () => {
           <ImageCarousel />
         </div>
 
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center items-start gap-6 mt-48">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center items-start gap-6 mt-24 md:mt-48">
           <div className="flex-1 p-6 rounded-lg w-full md:w-auto">
             <p className="feature-text g_text text-gray-400 custom-font-size leading-relaxed">
               New display technology allows us
@@ -148,7 +148,7 @@ const Features = () => {
             </p>
           </div>
 
-          <div className="flex-1 p-6 rounded-lg w-full md:w-auto mb-24">
+          <div className="flex-1 p-6 rounded-lg w-full md:w-auto md:mb-24">
             <p className="feature-text g_text text-gray-400 custom-font-size leading-relaxed">
               iPhone 16 Pro is splash, water and
               <br />

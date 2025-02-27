@@ -82,42 +82,58 @@ const Features = () => {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center items-start gap-6">
           <div className="flex-1 p-6 rounded-lg w-full md:w-auto">
             <p className="feature-text g_text text-gray-400 custom-font-size leading-relaxed">
-              New display technology allows us
+              iPhone 16 Pro features a
               <br />
-              to route display data under active
+              Grade5 titanium design with
               <br />
-              pixels with no distortion, resulting
+              a new, refined micro-blasted
               <br />
-              in thinner borders for larger
+              texture. Titanium has one of
               <br />
-              15.93 cm (6.3”) and 17.43 cm
+              the highest strength-to-
               <br />
-              (6.9”){" "}
-              <span className="text-white font-medium">
-                Super Retina XDR displays
-              </span>{" "}
+              weight ratios of any metal,
               <br />
-              that feel great in the hand.
+              making these models{' '}
+              <span className="text-white font-bold">incredibly strong and
+                <br />
+                impressively light</span>.
+              <br />
+              iPhone 16 Pro comes in four
+              <br />
+              stunning finishes — including
+              <br />
+              new Desert Titanium.
             </p>
           </div>
 
           <div className="flex-1 p-6 rounded-lg w-full md:w-auto md:mb-24">
-            <p className="feature-text g_text text-gray-400 custom-font-size leading-relaxed">
-              iPhone 16 Pro is splash, water and
+          <p className="feature-text g_text text-gray-400 custom-font-size leading-relaxed">
+              Internal design improvements
               <br />
-              dust resistant. It also has our
+              — including a 100% recycled
               <br />
-              latest-generation Ceramic Shield
+              aluminum thermal
               <br />
-              material that’s{" "}
-              <span className="text-white font-medium">
-                two times tougher
+              substructure and back glass
+              <br />
+              optimisations that further
+              <br />
+              dissipate heat enable up to
+              <br />
+              20% {" "}
+              <span className="text-white font-bold">
+                better sustained
                 <br />
-                than any smartphone glass.
+                performance
               </span>{" "}
-              Talk
+              than iPhone 15
               <br />
-              about durable.
+              Pro. So you can do all the
+              <br />
+              things you love — like high-
+              <br />
+              intensity gaming — for longer.
             </p>
           </div>
         </div>

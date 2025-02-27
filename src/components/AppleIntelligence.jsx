@@ -15,7 +15,7 @@ const AppleIntelligence = () => {
   const [selected, setSelected] = useState(0);
   const Items = [
     {
-      cardHeading1: "Boost your productivity1",
+      cardHeading1: "Boost your productivity",
       cardHeading2:
         "Explore new tools that help you write, focus and communicate.",
       card1: {
@@ -93,7 +93,7 @@ const AppleIntelligence = () => {
     },
   ];
   return (
-    <section className="w-full flex flex-col justify-center items-center lg:px-32 bg-gradient-to-t  from-[#1c1b1b] via-[#222121] to-[#00000055] ">
+    <section className="w-full flex flex-col justify-center text-center items-center lg:px-32 bg-gradient-to-t  from-[#1c1b1b] via-[#222121] to-[#00000055] ">
       <div className="hidden min-[1075px]:flex  justify-center w-[80%] xl:w-3/5">
         <ul className="text-lg flex gap-6 text-[#86868b] h-9 w-full font-semibold ">
           <li

@@ -94,6 +94,7 @@ const VideoCarousel = () => {
           if (progress !== currentProgress) {
             currentProgress = progress;
 
+            //this is to optmize for different devices
             gsap.to(videoDivRef.current[videoId], {
               width:
                 window.innerWidth < 760

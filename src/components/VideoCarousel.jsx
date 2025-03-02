@@ -59,6 +59,7 @@ const VideoCarousel = () => {
     })
   })
 
+  //used the gsap to make the transition properly for the video carousel
   useGSAP(() => {
     gsap.to("#slider", {
       transform: `translateX(${-100 * videoId}%)`,

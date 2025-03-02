@@ -50,6 +50,7 @@ const Navbar = () => {
             height={18}
             className="cursor-pointer"
           />
+
           <div className="sm:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
               <div className="w-6 h-[2px] bg-white mb-1"></div>

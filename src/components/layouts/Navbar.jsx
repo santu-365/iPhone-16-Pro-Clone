@@ -9,7 +9,7 @@ const Navbar = () => {
   
   useEffect(() => {
     if (isOpen) {
-      // Small delay to ensure the element is in the DOM before animating
+      //samll delay to ensure the element is in the dOM before animating
       setTimeout(() => {
         setAnimationClass("translate-y-0");
       }, 10);
@@ -19,6 +19,7 @@ const Navbar = () => {
   }, [isOpen]);
   
   return (
+  
     <header className="bg-transparent px-4 w-full flex flex-col justify-between items-center relative z-20">
       <nav className="flex w-full screen-max-width items-center py-3 bg-transparent justify-between">
         <Link to="/">
@@ -60,15 +61,16 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      {/* option for the mobile devices for the ham burger  */}
       
-      {/* Apple-style Mobile Menu Overlay with Slide Animation */}
       {(isOpen || animationClass !== "translate-y-[-100%]") && (
         <div 
           className={`fixed inset-0 bg-black z-50 flex flex-col text-white sm:hidden overflow-y-auto transition-transform duration-300 ease-in-out ${animationClass}`}
           onTransitionEnd={() => {
             if (animationClass === "translate-y-[-100%]" && !isOpen) {
-              // This will completely remove the element from DOM after the animation completes
-              setAnimationClass("hidden translate-y-[-100%]");
+              // This will completely remove the element from DOM after the   animation completes
+              setAnimationClass("hidden translate-y-[-100%] ");
             }
           }}
         >

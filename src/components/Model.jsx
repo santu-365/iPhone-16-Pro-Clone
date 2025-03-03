@@ -103,6 +103,10 @@ const Model = () => {
         </h1>
         <div className="flex flex-col items-center mt-5">
           <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
+
+
+            {/* // option for the larger model is there but removed the button to access it so the proper requirement is achieved . */}
+
             <ModelView
               index={2}
               groupRef={large}
@@ -143,7 +147,7 @@ const Model = () => {
             ref={divRef}
             style={{ bottom: "20px" }} 
           >
-            
+
             <p className="text-sm font-light text-center mb-5 bg-gray-300 w-fit p-2 rounded-full">
               {model.title}
             </p>

@@ -143,6 +143,7 @@ const Model = () => {
             ref={divRef}
             style={{ bottom: "20px" }} 
           >
+            
             <p className="text-sm font-light text-center mb-5 bg-gray-300 w-fit p-2 rounded-full">
               {model.title}
             </p>

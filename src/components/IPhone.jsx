@@ -15,9 +15,14 @@ function Model(props) {
 
   const texture = useTexture(props.item.img);
   //four color, black ,white,natural,desert
+
+  // using the color to adjust the material color as model is not desinged for evryh color and until low sized mode, is made we cant add as addikng multiple mode will make the site more heavier 
   useEffect(() => {
     Object.entries(materials).map((material) => {
       if (
+
+        // used different material color code so that we could map them over hte model 
+        
         material[0] !== "zFdeDaGNRwzccye" &&
         material[0] !== "ujsvqBWRMnqdwPx" &&
         material[0] !== "hUlRcbieVuIiOXG" &&

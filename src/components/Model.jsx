@@ -107,6 +107,8 @@ const Model = () => {
 
             {/* // option for the larger model is there but removed the button to access it so the proper requirement is achieved . */}
 
+            {/* also  removed the slide option to avoid glitching  */}
+
             <ModelView
               index={2}
               groupRef={large}

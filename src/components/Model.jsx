@@ -95,6 +95,7 @@ const Model = () => {
     gsap.to("#heading", { y: 0, opacity: 1 });
   }, []);
   return (
+    // alot of ref are used to check the proper use to make sure its doin right
     <section className="common-padding" ref={parentRef}>
       <div className="screen-max-width">
         <h1 id="heading" className="section-heading" style={{ color: "white" }}>

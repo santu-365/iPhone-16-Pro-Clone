@@ -9,7 +9,7 @@ const Navbar = () => {
   
   useEffect(() => {
     if (isOpen) {
-      //samll delay to ensure the element is in the dOM before animating
+      //small delay to ensure the element is in the dOM before animating
       setTimeout(() => {
         setAnimationClass("translate-y-0");
       }, 10);

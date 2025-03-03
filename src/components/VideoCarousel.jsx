@@ -197,7 +197,6 @@ const VideoCarousel = () => {
     }
     // For small screens (mobile)
     else {
-      // You can adjust these values based on your requirements
       return {
         width: "100%", // Use full width on mobile
         height: "400px", // Reduced height for mobile

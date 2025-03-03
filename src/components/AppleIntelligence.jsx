@@ -11,8 +11,12 @@ import {
   img3card3,
 } from "../utils";
 
+
 const AppleIntelligence = () => {
   const [selected, setSelected] = useState(0);
+
+  // Storing data in an array item so that it can be used.using string interpoation or dynamic content
+
   const Items = [
     {
       cardHeading1: "Boost your productivity",

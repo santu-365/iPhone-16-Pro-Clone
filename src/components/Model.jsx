@@ -127,7 +127,6 @@ const Model = () => {
               item={model}
               size={size}
             />
-
             <Canvas
               className="w-full h-full"
               style={{

@@ -153,7 +153,7 @@ const AppleIntelligence = () => {
                   <span className="text-white font-bold">
                     {item.card1.StrongText}
                   </span>{" "}
-                  {item.card1.text2}
+                  {item.card1.text2}.
                 </div>
               </div>
               <div className="min-[1075px]:w-1/2 flex flex-col gap-7">

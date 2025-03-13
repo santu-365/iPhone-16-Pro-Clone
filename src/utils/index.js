@@ -13,6 +13,7 @@ import highlightSixthmv from "/assets/videos/highlight-sixth.mp4"; // Added for 
 import exploremv from "/assets/videos/explore.mp4";
 import framemv from "/assets/videos/frame.mp4";
 
+
 import apple from "/assets/images/apple.svg";
 import search from "/assets/images/search.svg";
 import bag from "/assets/images/bag.svg";
@@ -71,6 +72,12 @@ export const ic2Img = ic2;
 export const ic3Img = ic3;
 export const ic4Img = ic4;
 
+// import  appleImg from "/assets/images/1.png";
+// export const appleIntelligenceImage =appleImg;
+
+import appleIntelligenceImg from "/assets/images/1.png";
+export const appleIntelligenceImage = appleIntelligenceImg;
+
 import iPhoneImage from "/assets/images/new.png";
 export const iPhone16Image = iPhoneImage;
 
@@ -95,3 +102,5 @@ export const img2card3 = img32;
 export const img3card1 = img13;
 export const img3card2 = img23;
 export const img3card3 = img33;
+
+

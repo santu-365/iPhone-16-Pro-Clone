@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { heroVideo } from "../utils";
 import { smallHero } from "../utils";
-import appleIntelligenceImage from "./1.png";
+import { appleIntelligenceImage } from "../utils";
 import FloatingNavbar from "./FloatingNavbar";
 
 const HeroWithNavbar = () => {

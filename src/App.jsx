@@ -14,6 +14,7 @@ const App = () => {
   // return <button onClick={() => methodDoesNotExist()}>Break the world</button>;
 
   return (
+    //there was an error of horizontal scrolling fixed using this ,dont remove this
     <main className="overflow-x-hidden">
       <Navbar />
       <Hero />

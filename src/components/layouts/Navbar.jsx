@@ -9,7 +9,7 @@ const Navbar = () => {
   
   useEffect(() => {
     if (isOpen) {
-      //small delay to ensure the element is in the dOM before animating
+      //small delay to ensure the element is in the DOM before animating
       setTimeout(() => {
         setAnimationClass("translate-y-0");
       }, 10);
@@ -19,14 +19,14 @@ const Navbar = () => {
   }, [isOpen]);
   
   return (
-  
     <header className="bg-transparent px-4 w-full flex flex-col justify-between items-center relative z-20">
       <nav className="flex w-full screen-max-width items-center py-3 bg-transparent justify-between">
         <Link to="/">
           <img src={appleImg} alt="Apple" width={16} height={16} />
         </Link>
         
-        <div className="flex justify-center max-sm:hidden">
+        {/* Change to hide on medium screens too */}
+        <div className="flex justify-center max-md:hidden">
           {navLists.map((nav) => (
             <Link to={`/${nav}`} key={nav}>
               <div className="px-6 text-sm cursor-pointer text-gray-200 hover:text-white transition-all">
@@ -36,7 +36,7 @@ const Navbar = () => {
           ))}
         </div>
         
-        <div className="flex items-center gap-6 max-sm:ml-auto">
+        <div className="flex items-center gap-6 max-md:ml-auto">
           <img
             src={searchImg}
             alt="Search"
@@ -51,8 +51,8 @@ const Navbar = () => {
             height={18}
             className="cursor-pointer"
           />
-
-          <div className="sm:hidden">
+          {/* Change to show on medium screens too */}
+          <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
               <div className="w-6 h-[2px] bg-white mb-1"></div>
               <div className="w-6 h-[2px] bg-white mb-1"></div>
@@ -61,15 +61,14 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* option for the mobile devices for the ham burger  */}
       
+      {/* Change to show on medium screens too */}
       {(isOpen || animationClass !== "translate-y-[-100%]") && (
-        <div 
-          className={`fixed inset-0 bg-black z-50 flex flex-col text-white sm:hidden overflow-y-auto transition-transform duration-300 ease-in-out ${animationClass}`}
+        <div
+          className={`fixed inset-0 bg-black z-50 flex flex-col text-white md:hidden overflow-y-auto transition-transform duration-300 ease-in-out ${animationClass}`}
           onTransitionEnd={() => {
             if (animationClass === "translate-y-[-100%]" && !isOpen) {
-              // This will completely remove the element from DOM after the   animation completes
+              // This will completely remove the element from DOM after the animation completes
               setAnimationClass("hidden translate-y-[-100%] ");
             }
           }}
@@ -82,9 +81,9 @@ const Navbar = () => {
           
           <div className="px-8 py-4 flex flex-col space-y-6">
             {navLists.map((nav) => (
-              <Link 
-                to={`/${nav}`} 
-                key={nav} 
+              <Link
+                to={`/${nav}`}
+                key={nav}
                 className="text-2xl font-semibold"
                 onClick={() => setIsOpen(false)}
               >

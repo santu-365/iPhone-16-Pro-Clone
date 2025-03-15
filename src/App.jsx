@@ -14,7 +14,7 @@ const App = () => {
   // return <button onClick={() => methodDoesNotExist()}>Break the world</button>;
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <Highlights />

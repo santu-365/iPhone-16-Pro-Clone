@@ -59,7 +59,7 @@ const FloatingNavbar = () => {
   return (
     <header
       id="floating-navbar"
-      className="fixed top-0 left-0 w-full bg-zinc z-50 py-3 px-5 md:px-10 flex justify-between items-center border-b border-[#4A4A4A]"
+      className="fixed top-0 left-0 w-full bg-zinc z-50 py-3 px-5 md:px-10 flex justify-between items-center border-b border-[#4A4A4A] overflow-hidden"
       style={{ transform: "translateY(-100%)", opacity: 0 }}
     >
       <div className="text-white text-xl font-bold md:ml-56">iPhone 16 Pro</div>

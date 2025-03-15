@@ -6,52 +6,27 @@ import { yellowImg } from "../utils";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
-import { models, sizes } from "../constants";
-import { animateWithGsapTimeline } from "../utils/animations";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
+import { models } from "../constants";
 
 const Model = () => {
-  const [size, setSize] = useState("small");
   const [model, setModel] = useState({
     title: "15.93 cm (6.3″) iPhone 16 Pro in four colours",
     color: ["#8F8A81", "#FFE7B9", "#6F6C64"],
     img: yellowImg,
   });
 
-  //camera
+  // camera control for small model only
   const cameraControlSmall = useRef();
-  const cameraControlLarge = useRef();
 
-  //model
-
+  // model group reference
   const small = useRef(new THREE.Group());
-  const large = useRef(new THREE.Group());
 
-  //rotation of the model
-
+  // rotation state for the small model
   const [smallRotation, setSmallRotation] = useState(0);
-  const [largeRotation, setLargeRotation] = useState(0);
-
-  const t1 = gsap.timeline();
-  useEffect(() => {
-    if (size === "large") {
-      animateWithGsapTimeline(t1, small, smallRotation, "#view1", "#view2", {
-        transform: "translateX(-100%)",
-        duration: 2,
-      });
-    }
-    if (size === "small") {
-      animateWithGsapTimeline(t1, large, largeRotation, "#view2", "#view1", {
-        transform: "translateX(0)",
-        duration: 2,
-      });
-    }
-  });
 
   const parentRef = useRef(null);
   const divRef = useRef(null);
 
-  
   useEffect(() => {
     gsap.fromTo(
       divRef.current, 
@@ -82,7 +57,7 @@ const Model = () => {
               position: "fixed",
               bottom: 20,
               duration: 0.5,
-              opacity:1
+              opacity: 1
             });
           },
         }
@@ -90,12 +65,11 @@ const Model = () => {
     );
   }, []);
   
-
   useGSAP(() => {
     gsap.to("#heading", { y: 0, opacity: 1 });
   }, []);
+
   return (
-    // alot of ref are used to check the proper use to make sure its doin right
     <section className="common-padding" ref={parentRef}>
       <div className="screen-max-width">
         <h1 id="heading" className="section-heading" style={{ color: "white" }}>
@@ -103,21 +77,7 @@ const Model = () => {
         </h1>
         <div className="flex flex-col items-center mt-5">
           <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
-
-
-            {/* // option for the larger model is there but removed the button to access it so the proper requirement is achieved . */}
-
-            {/* also  removed the slide option to avoid glitching  */}
-
-            <ModelView
-              index={2}
-              groupRef={large}
-              gsapType="view2"
-              controlRef={cameraControlLarge}
-              setRotationState={setLargeRotation}
-              item={model}
-              size={size}
-            />
+            {/* Only keeping the small model view */}
             <ModelView
               index={1}
               groupRef={small}
@@ -125,8 +85,9 @@ const Model = () => {
               controlRef={cameraControlSmall}
               setRotationState={setSmallRotation}
               item={model}
-              size={size}
+              size="small"
             />
+            
             <Canvas
               className="w-full h-full"
               style={{
@@ -148,17 +109,15 @@ const Model = () => {
             ref={divRef}
             style={{ bottom: "20px" }} 
           >
-
             <p className="text-sm font-light text-center mb-5 bg-gray-300 w-fit p-2 rounded-full">
               {model.title}
             </p>
             <div className="flex-center">
               <ul className="color-container gap-2">
                 {models.map((item, i) => (
-                  <div className={`rounded-full cursor-pointer w-8 h-8 flex-center ${ model.title === item.title ? 'border-blue border-1' : 'border-0'}`}>
+                  <div key={i} className={`rounded-full cursor-pointer w-8 h-8 flex-center ${ model.title === item.title ? 'border-blue border-1' : 'border-0'}`}>
                     <div className={`rounded-full cursor-pointer w-7 h-7 flex-center ${ model.title === item.title ? 'border-gray-700 border-1' : 'border-0'}`}>
                       <li
-                      key={i}
                       className={`w-6 h-6 rounded-full shadow-top ${model.title === item.title ? 'border-sky-50' : ''} border-2`}
                       style={{ backgroundColor: item.color[0] }}
                       onClick={() => setModel(item)}
@@ -174,4 +133,5 @@ const Model = () => {
     </section>
   );
 };
+
 export default Model;

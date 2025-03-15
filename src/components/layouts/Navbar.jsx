@@ -99,3 +99,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+//require some fixes for the tabs

@@ -94,9 +94,6 @@ If you have any questions or inquiries regarding the iPhone 16 Pro clone, feel f
 
 <br/>
 
-  ## 🙏 **Acknowledgments**
-
-Special thanks to [**Adrian Hajdin**](https://github.com/adrianhajdin) for his insightful iPhone 15 tutorial, which greatly assisted in the development of this project. This project is intended for educational purposes only.
 
   <br/>
 

@@ -38,14 +38,13 @@ pipeline {
         stage('Serve') {
             steps {
                 sh '''
-                # Fix permissions so Nginx can read
-                chmod -R 755 build
-
                 # Stop any old container
                 docker rm -f iphone_clone || true
 
-                # Run Nginx container serving build folder
-                docker run -d --name iphone_clone -p 80:80 -v $WORKSPACE/build:/usr/share/nginx/html nginx
+                # Run Nginx container serving build folder (read-only mount)
+                docker run -d --name iphone_clone -p 80:80 \
+                  -v $WORKSPACE/build:/usr/share/nginx/html:ro \
+                  nginx
                 '''
             }
         }

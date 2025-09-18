@@ -22,7 +22,19 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'npm test || true'  // if you don’t have tests yet
+                sh 'npm test || true'
+            }
+        }
+
+        stage('Serve') {
+            steps {
+                sh '''
+                # Stop any old container
+                docker rm -f iphone_clone || true
+                
+                # Run Nginx container serving build folder
+                docker run -d --name iphone_clone -p 80:80 -v $WORKSPACE/build:/usr/share/nginx/html nginx
+                '''
             }
         }
     }

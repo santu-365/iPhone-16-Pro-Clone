@@ -53,7 +53,8 @@ pipeline {
 
                 # Run Nginx container serving build folder (read-only mount)
                 docker run -d --name iphone_clone -p 80:80 \
-                  -v $WORKSPACE/build:/usr/share/nginx/html:ro \
+               -v $WORKSPACE/dist:/usr/share/nginx/html:ro
+
                   nginx
                 '''
             }

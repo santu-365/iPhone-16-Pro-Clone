@@ -20,6 +20,16 @@ pipeline {
             }
         }
 
+        stage('Verify Build Contents') {
+    steps {
+        sh '''
+        echo "Checking build folder..."
+        ls -lah build
+        '''
+    }
+}
+
+
         stage('Verify Build') {
             steps {
                 sh '''

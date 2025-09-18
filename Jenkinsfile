@@ -20,21 +20,11 @@ pipeline {
             }
         }
 
-        stage('Verify Build Contents') {
-    steps {
-        sh '''
-        echo "Checking build folder..."
-        ls -lah build
-        '''
-    }
-}
-
-
         stage('Verify Build') {
             steps {
                 sh '''
-                echo "Checking build folder..."
-                ls -l build
+                echo "Checking dist folder..."
+                ls -lah dist
                 '''
             }
         }
@@ -51,11 +41,10 @@ pipeline {
                 # Stop any old container
                 docker rm -f iphone_clone || true
 
-                # Run Nginx container serving build folder (read-only mount)
+                # Run Nginx container serving dist folder
                 docker run -d --name iphone_clone -p 80:80 \
-               -v $WORKSPACE/dist:/usr/share/nginx/html:ro
-
-                  nginx
+                  -v $WORKSPACE/dist:/usr/share/nginx/html:ro \
+                  nginx:alpine
                 '''
             }
         }
